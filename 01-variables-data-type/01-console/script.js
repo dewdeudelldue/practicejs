@@ -114,12 +114,98 @@
 // console.log(x, y, z, a, b, c, d);
 
 //datetime
-let x;
-let d = new Date();
-x = d.toString();
-x = d.getTime();
-x = d.valueOf();
+// let x;
+// let d = new Date();
+// x = d.toString();
+// x = d.getTime();
+// x = d.valueOf();
 
-x = d.getFullYear();
+// x = d.getFullYear();
+//arrays
+// console.log(x, typeof x);
+// let x;
+// const numbers = [10, 20, 30, 40, 50];
 
-console.log(x, typeof x);
+// const fruit = ['apple', 'banana', 'orange'];
+
+// x = numbers[0];
+
+// x = numbers[0] + fruit[2];
+// fruit[fruit.length] = 'apple'
+// x = fruit;
+// //x = `${fruit[1]} is good for health.`;
+
+// console.log(x);
+
+// const arr = [1, 2, 3, 4, 5];
+// arr.unshift(0); // Adds 0 at the beginning
+// arr.reverse(); // Reverses the array
+// console.log(arr);
+
+// const arr1 = [1, 2, 3, 4, 5];
+// const arr2 = [5, 6, 7, 8, 9];
+// x1 = arr1.slice(0, 5);
+// // console.log(x1);
+// x2 = arr2.slice(1, 5);
+// const mergedArray = arr1.concat(x2);
+// console.log(mergedArray);
+//Array and Object Reference Example
+// let x;
+// const person1 = {
+//     name: 'Bob',
+//     age: 28,
+//     isAdmin: false,
+//     address: {
+//         street: '123 Main St',
+//         city: 'Anytown',
+//         country: 'USA'
+//     }
+// };
+// person1.greeting = function () {
+//     console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`)   ;
+// };
+// person1.greeting();
+// // person1.address.city = 'New City'; //update
+// // delete person1.address.country; //delete
+// x = person1;
+// console.log(x);
+
+// let x;
+
+// const todo = new Object();
+// todo.name = 'Zigzak';
+// todo.age = 26;
+// todo.isAdmin = true;
+// x = todo;
+
+// const person = {
+//     address: {
+//         detail: {
+//     street: '456 Another St',
+//     city: 'Othertown',
+//     country: 'USA'
+//         }
+//     }
+// };
+
+// x = person.address.detail.city;
+
+// console.log(x);
+
+// const obj1 = { a: 1, b: 2 };
+// const obj2 = { c: 3, d: 4 };
+// const obj3 = { obj1, obj2 }
+
+// const obj4 = Object.assign({}, obj1, obj2);
+
+// x = obj4;
+// console.log(x);
+
+// const name = 'Dew';
+// const age = 28;
+// const isAdmin = false;
+
+// const user = { name, age, isAdmin };
+// console.log(user);
+
+//destructuring
