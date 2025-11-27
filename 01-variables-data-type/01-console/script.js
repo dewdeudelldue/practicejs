@@ -209,3 +209,57 @@
 // console.log(user);
 
 //destructuring
+
+//json
+// const post = {
+//     id: 1,
+//     title: 'Learn JavaScript'
+// };
+
+// const str = JSON.stringify(post);
+// console.log(str);
+
+// const library = [
+//     {
+        
+//         title: 'Learn JavaScript101',
+//         author: 'Zigzak',
+//         status: {
+//             own: true,
+//             reading: false,
+//             read: false
+//         },
+//     },
+//     {
+        
+//         title: 'Learn JavaScript102',
+//         author: 'Zigzak',
+//         status: {
+//             own: true,
+//             reading: false,
+//             read: false
+//         },
+//     },
+//     {
+        
+//         title: 'Learn JavaScript103',
+//         author: 'Zigzak',
+//         status: {
+//             own: true,
+//             reading: false,
+//             read: false
+//         },
+//     },
+// ];
+
+// library[0].status.read = true;
+// library[1].status.read = true;
+// library[2].status.read = true;
+
+// // library[0].title = 'Testing JavaScript101';
+// const { title: firstbookTitle } = library[0];
+// console.log(firstbookTitle);
+
+// const libraryJSON = JSON.stringify(library);
+// console.log(libraryJSON);
+//     console.log(library);
