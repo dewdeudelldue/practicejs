@@ -263,3 +263,41 @@
 // const libraryJSON = JSON.stringify(library);
 // console.log(libraryJSON);
 //     console.log(library);
+
+function sayHej() {
+    console.log('Hej!');
+};
+sayHej();
+
+function add(num1, num2) { 
+    console.log(num1 + num2);
+};
+add(10, 20);
+
+function multiply(num1, num2) {
+    return num1 * num2;
+    console.log('This will not be executed');
+}
+const result = multiply(5, 4);
+console.log(result);
+
+
+function greet(user) {
+    return `Hello, ${user.name}! Welcome to JavaScript by id ${user.id}.`;
+}
+
+const user = { 
+    name: 'Alice',
+    id: 111
+}
+console.log(greet(user));
+//or Pass parameters directly
+//console.log(greet({name:'Dew', id:444}));
+
+function getRandomNumber(arr) {
+    const randomNumber = Math.floor(Math.random() * arr.length);
+    const item = arr[randomNumber];
+    console.log(item);
+}
+
+getRandomNumber([1,2,3,4,5,6,7,8,9,10]);
