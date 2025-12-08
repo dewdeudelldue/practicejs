@@ -269,7 +269,7 @@
 // };
 // sayHej();
 
-// function add(num1, num2) { 
+// function add(num1, num2) {
 //     console.log(num1 + num2);
 // };
 // add(10, 20);
@@ -286,7 +286,7 @@
 //     return `Hello, ${user.name}! Welcome to JavaScript by id ${user.id}.`;
 // }
 
-// const user = { 
+// const user = {
 //     name: 'Alice',
 //     id: 111
 // }
@@ -304,55 +304,163 @@
 
 //Params
 //Default Params
-function registerUser(user = 'Bot'){
-    // if (!user){ user = 'Bot';
+// function registerUser(user = 'Bot'){
+//     // if (!user){ user = 'Bot';
 
-    // }
-    return user + ' is Registered'
+//     // }
+//     return user + ' is Registered'
     
-}
+// }
 
-console.log(registerUser());
+// console.log(registerUser());
 
-//Rest Params
+// //Rest Params
 
-function sum(...numbers){
-    let total = 0;
+// function sum(...numbers){
+//     let total = 0;
 
-    for (const num of numbers){
-        total += num;
+//     for (const num of numbers){
+//         total += num;
+//     }
+//     return total;
+// }
+
+// console.log(sum(1,2,3));
+
+// // obj as param
+
+// function loginUser (user){
+//     return `The user ${user.name} logged in with email ${user.email} is successful.`;
+// }
+// const user = {
+//     name: 'Zigzak',
+//     email: 'zigzak@example.com'
+// };
+// //console.log(loginUser(user));
+
+// console.log(loginUser({ name: 'Dew', email: 'dewed@example' }));
+
+// //array and param
+// //รับตัวแปรเข้ามาแบบหลายค่า
+// function getRandom(...arr){
+//     const randomIndex = Math.floor (Math.random() * arr.length);
+//     const item = arr[randomIndex];
+//     console.log(item);
+// }
+// getRandom(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+// //ไม่รับหลายค่า แต่รับเป็น array แทน
+// function getRandom(arr){
+//     const randomIndex = Math.floor (Math.random() * arr.length);
+//     const item = arr[randomIndex];
+//     console.log(item);
+// }
+// getRandom([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+// //Block Scope
+// const x = 100;
+
+// if (true) {
+//     const y = 200;
+//     console.log(x+y);
+// }
+// for (let i = 0; i <= 10; i++) {
+//     console.log(i);
+// }
+// //console.log(i); นอก loop จะเรียกใช้ตัวแปร i ไม่ได้ เพราะประกาศด้วย let ซึ่งมีขอบเขตเป็น block scope
+
+// if (true) {
+//     var z = 300;
+//     console.log(x+z); //มี x เป็น global scope
+// }
+// console.log(z); // นอก if จะเรียกใช้ตัวแปร z ได้ เพราะประกาศด้วย var ซึ่งมีขอบเขตเป็น function scope
+
+// function test() {
+//     var a = 400;
+//     console.log(a); //มี x เป็น global scope
+// }
+// test();
+// //console.log(a); นอก function จะเรียกใช้ตัวแปร a ไม่ได้ เพราะประกาศด้วย var ซึ่งมีขอบเขตเป็น function scope
+
+//nested function scope
+function first() {
+    const x = 10;
+    console.log(x);
+
+    function second() {
+        const y = 20;
+        console.log(x + y); 
     }
-    return total;
+    second();
+}   
+first();
+// second(); นอก function first() จะเรียกใช้ function second() ไม่ได้ เพราะเป็น nested function
+
+if (true) {
+    const a = 50;
+    if (a === 50) {
+        const b = 100;
+        console.log(a + b); 
+    }
+}   
+//function declaration 
+function addDollarSign(value) {
+    return '$' + value;
 }
-
-console.log(sum(1,2,3));
-
-// obj as param
-
-function loginUser (user){
-    return `The user ${user.name} logged in with email ${user.email} is successful.`;
-}
-const user = {
-    name: 'Zigzak',
-    email: 'zigzak@example.com'
+console.log(addDollarSign(100));
+//function expression
+const addbahtSign = function (value) {
+    return value + ' ' +'baht';
 };
-//console.log(loginUser(user));
+console.log(addbahtSign(200));
 
-console.log(loginUser({ name: 'Dew', email: 'dewed@example' }));
+//arrow function
+const add = (a, b) => a + b;
+console.log(add(10, 20));  //เหมาะกับการเขียนฟังก์ชันสั้นๆ
 
-//array and param
-//รับตัวแปรเข้ามาแบบหลายค่า
-function getRandom(...arr){
-    const randomIndex = Math.floor (Math.random() * arr.length);
-    const item = arr[randomIndex];
-    console.log(item);
+const add1 = (a, b) => {
+    
+    return a + b;
+};
+console.log(add1(10, 20)); //เหมาะกับการเขียนฟังก์ชันที่มีหลายบรรทัด
+
+//return object literal in arrow function
+const createobj = () => ({
+    name: 'Zigzak',
+    age: 26
+});
+console.log(createobj());
+
+const numbers = [1, 2, 3, 4, 5];
+numbers.forEach(function (n) {
+    console.log(n);
+});
+//arrow function in callback
+numbers.forEach((n) => console.log(n));
+
+(function () {
+    const user = 'Dew';
+    console.log(`This is an IIFE (Immediately Invoked Function Expression) ${user}`);
+})
+    ();
+
+const getCelsius = (fahrenheit) => {
+  return ((fahrenheit - 32) * 5/9) + ' °C';
+};
+console.log(getCelsius(50));
+
+const minMax = (arr) => {
+    return {min: Math.min(...arr), max: Math.max(...arr)};
 }
-getRandom(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+console.log(minMax([1, 2, 3, 4, 5]));
 
-//ไม่รับหลายค่า แต่รับเป็น array แทน
-function getRandom(arr){
-    const randomIndex = Math.floor (Math.random() * arr.length);
-    const item = arr[randomIndex];
-    console.log(item);
-}
-getRandom([1,2,3,4,5,6,7,8,9,10]);
+// (function () {
+//     const width = 25;
+//     const height = 10;
+//     const area = width * height;
+//     console.log(`The area of the rectangle is ${area} square units.`);
+// })();
+((length, width) => {
+    const area = length * width;
+    console.log(`The area of the rectangle is ${area} square units.`);
+})(25, 10);
