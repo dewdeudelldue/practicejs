@@ -264,43 +264,43 @@
 // console.log(libraryJSON);
 //     console.log(library);
 
-function sayHej() {
-    console.log('Hej!');
-};
-sayHej();
+// function sayHej() {
+//     console.log('Hej!');
+// };
+// sayHej();
 
-function add(num1, num2) { 
-    console.log(num1 + num2);
-};
-add(10, 20);
+// function add(num1, num2) { 
+//     console.log(num1 + num2);
+// };
+// add(10, 20);
 
-function multiply(num1, num2) {
-    return num1 * num2;
-    console.log('This will not be executed');
-}
-const result = multiply(5, 4);
-console.log(result);
+// function multiply(num1, num2) {
+//     return num1 * num2;
+//     console.log('This will not be executed');
+// }
+// const result = multiply(5, 4);
+// console.log(result);
 
 
-function greet(user) {
-    return `Hello, ${user.name}! Welcome to JavaScript by id ${user.id}.`;
-}
+// function greet(user) {
+//     return `Hello, ${user.name}! Welcome to JavaScript by id ${user.id}.`;
+// }
 
-const user = { 
-    name: 'Alice',
-    id: 111
-}
-console.log(greet(user));
-//or Pass parameters directly
-//console.log(greet({name:'Dew', id:444}));
+// const user = { 
+//     name: 'Alice',
+//     id: 111
+// }
+// console.log(greet(user));
+// //or Pass parameters directly
+// //console.log(greet({name:'Dew', id:444}));
 
-function getRandomNumber(arr) {
-    const randomNumber = Math.floor(Math.random() * arr.length);
-    const item = arr[randomNumber];
-    console.log(item);
-}
+// function getRandomNumber(arr) {
+//     const randomNumber = Math.floor(Math.random() * arr.length);
+//     const item = arr[randomNumber];
+//     console.log(item);
+// }
 
-getRandomNumber([1,2,3,4,5,6,7,8,9,10]);
+// getRandomNumber([1,2,3,4,5,6,7,8,9,10]);
 
 //Params
 //Default Params
@@ -328,3 +328,31 @@ function sum(...numbers){
 console.log(sum(1,2,3));
 
 // obj as param
+
+function loginUser (user){
+    return `The user ${user.name} logged in with email ${user.email} is successful.`;
+}
+const user = {
+    name: 'Zigzak',
+    email: 'zigzak@example.com'
+};
+//console.log(loginUser(user));
+
+console.log(loginUser({ name: 'Dew', email: 'dewed@example' }));
+
+//array and param
+//รับตัวแปรเข้ามาแบบหลายค่า
+function getRandom(...arr){
+    const randomIndex = Math.floor (Math.random() * arr.length);
+    const item = arr[randomIndex];
+    console.log(item);
+}
+getRandom(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+//ไม่รับหลายค่า แต่รับเป็น array แทน
+function getRandom(arr){
+    const randomIndex = Math.floor (Math.random() * arr.length);
+    const item = arr[randomIndex];
+    console.log(item);
+}
+getRandom([1,2,3,4,5,6,7,8,9,10]);
